@@ -1,0 +1,24 @@
+@import 'm3-svelte/etc/styles.css';
+@import 'm3-svelte/etc/recommended-styles.css';
+@import '@fontsource-variable/google-sans-flex/opsz.css';
+@import './theme.css';
+
+:root {
+	@apply --m3-body-large;
+	background-color: var(--m3c-surface);
+	color: var(--m3c-on-surface);
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	color: var(--m3c-primary);
+}
+
+.wrap {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 16px;
+}
