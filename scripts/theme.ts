@@ -1,5 +1,8 @@
 // Generates src/theme.css, the Material 3 color theme, from one seed color.
 // Usage: npm run theme -- "#4cc3ff"
+//
+// Fidelity scheme: the seed itself becomes the primary container (the site's cyan), and the
+// tertiary palette is its amber complement, used for stars and ranks.
 import { writeFileSync } from 'node:fs';
 import { argbFromHex, DynamicScheme, Hct, Variant } from '@ktibow/material-color-utilities-nightly';
 import { colors, genCSS } from 'm3-svelte/etc/colors';
@@ -9,7 +12,7 @@ const sourceColorHcts = [Hct.fromInt(argbFromHex(seed))];
 const scheme = (isDark: boolean) =>
 	new DynamicScheme({
 		sourceColorHcts,
-		variant: Variant.TONAL_SPOT,
+		variant: Variant.FIDELITY,
 		contrastLevel: 0,
 		specVersion: '2025',
 		isDark

@@ -5,7 +5,10 @@ declare global {
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
-		// interface PageState {}
+		interface PageState {
+			/** Id of the item whose details are open in a dialog or full-screen page. */
+			item?: string;
+		}
 		// interface Platform {}
 	}
 }
